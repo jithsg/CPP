@@ -1,71 +1,44 @@
 #include <iostream>
 using namespace std;
 
-// class Base {
-// public:
-//     void show() {  // Virtual function
-//         cout << "Base class show function" << endl;
-//     }
-
-//     void display() {  // Non-virtual function
-//         cout << "Base class display function" << endl;
-//     }
-// };
-
-// class Derived : public Base {
-// public:
-//     void show() {  // Override virtual function
-//         cout << "Derived class show function" << endl;
-//     }
-
-//     void display() {  // Override non-virtual function
-//         cout << "Derived class display function" << endl;
-//     }
-// };
-
-// int main() {
-//     Base* basePtr;
-//     Derived derivedObj;
-//     basePtr = &derivedObj;
-
-//     basePtr->show();     // Calls Derived class show function (dynamic binding)
-//     basePtr->display();  // Calls Base class display function (static binding)
-
-//     return 0;
-// }
-
-
-class Base {
-public:
-   virtual void show() {  // Virtual function
-      cout << "Base class show function" << endl;
-   }
-
-   void display() {  // Non-virtual function
-      cout << "Base class display function" << endl;
-   }
-
-};
-
-class Derived : public Base {
+class character{
   public:
-    void show() override{
-      cout << "Derived class show function" << endl;
+    virtual void act(character* charptr){
+      cout << "Character acting" << endl;
     }
-    void display(){
-      cout << "Derived class display function" << endl;
-    } 
+
 };
 
+
+class goblin: public character{
+  public:
+    void act(character* charptr)override{
+      cout << "Goblin acting" << endl;
+    }
+
+};
+
+class dragon : public character{
+  public:
+    void act(character* charptr)override{
+      cout << "Dragon acting" << endl;
+    }
+
+};
+
+
+
+void battle(character* charptr1, character*charpter2){
+  charptr1->act(charpter2);;
+  charpter2->act(charptr1);
+}
 
 
 int main(){
-  Base* basePtr;
-  Derived derivedObj;
-  basePtr = &derivedObj;
+  goblin goblin1;
+  dragon dragon1;
 
-  basePtr->show();
-  basePtr->display();
+  battle(&goblin1, &dragon1);
+
   return 0;
-
 }
