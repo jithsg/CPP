@@ -37,7 +37,7 @@ using namespace std;
 
 class Base {
 public:
-   void show() {  // Virtual function
+   virtual void show() {  // Virtual function
       cout << "Base class show function" << endl;
    }
 
@@ -49,7 +49,7 @@ public:
 
 class Derived : public Base {
   public:
-    void show(){
+    void show() override{
       cout << "Derived class show function" << endl;
     }
     void display(){
