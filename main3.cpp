@@ -1,10 +1,19 @@
-#include "Animal.h"
+#include "Character.h"
+#include <iostream>
 
-Animal :: Animal(string name, int age) : mName(name), mAge(age) {
-    cout << "Animal created" << endl;
+namespace Animal {
+    void greet() {
+        std::cout << "Hello from Animal namespace!" << std::endl;
+    }
+}
+
+namespace Human {
+    void greet() {
+        std::cout << "Hello from Human namespace!" << std::endl;
+    }
 }
 int main() {
-    Animal a("Fido", 3);
-    return 0;
-
+Human :: greet();
+Animal :: greet();
+return 0;
 }

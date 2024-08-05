@@ -1,10 +1,6 @@
-#ifndef CHARACTER_H
-#define CHARACTER_H
+#pragma once
 
 class Character {
-public:
-    Character();
-    ~Character();
+    public:
+        void Greet();
 };
-
-#endif // CHARACTER_H
