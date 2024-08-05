@@ -1,10 +1,11 @@
 
-#include "Geometry.h"
+#include "Circle.h"
 #include <iostream>
 using namespace std;
 int main() {
-  float radius {5};
-  cout<< "Circumference of circle is " << Geometry :: Circumference(radius) << endl;
+  Geometry :: Circle c(5);
+  cout<< "Area of circle is " << c.Area() << endl;
+  cout<< "Circumference of circle is " << c.Circumference() << endl;
   return 0;
 
 }
