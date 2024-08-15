@@ -1,21 +1,26 @@
+#include <memory>
 #include <iostream>
 using namespace std;
 
 
-struct Sword {
+struct Sword{
+  string mName;
+
+  Sword(string name): mName(name){
+    cout << "Sword " << mName << " created" << endl;
+  }
+  Sword (const Sword& other){
+    mName = other.mName;
+    cout << "Copy constructor called" << endl;
+  }
 
 };
 
-struct Player{
-  Sword* Weapon {nullptr};
-  Player(Sword* weapon) : Weapon(weapon) {}
 
-};
 
 int main(){
-
-Sword IronSword;
-Player player1(&IronSword);
-Player player2{player1};
-
+  Sword s1("Excalibur");
+  Sword s2(s1);
+  
+  cout <<s2.mName << endl;
 }
