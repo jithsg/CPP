@@ -18,8 +18,7 @@ struct Player{
     mWeapon = weapon;
   }
 
-  Player(const Player& other){
-    mWeapon = other.mWeapon;
+  Player(const Player& other): mWeapon(other.mWeapon){
     cout << "Copy constructor for Player" << endl; 
   }
 
