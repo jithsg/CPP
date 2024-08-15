@@ -1,33 +1,21 @@
 #include <iostream>
 using namespace std;
 
-struct Sword{
-  int damage;
-  Sword(int damage){
-    this->damage = damage;
-  }
-  void swing(){
-    cout << "Swinging sword for " << damage << " damage" << endl;
-  }
+
+struct Sword {
+
 };
 
-struct player{
-  Sword* sword {nullptr};
-
-  player(Sword* sword){
-    this->sword = sword;
-  }
-
+struct Player{
+  Sword* Weapon {nullptr};
+  Player(Sword* weapon) : Weapon(weapon) {}
 
 };
 
 int main(){
 
-  Sword sword1(10);
-  player player1(&sword1);
-  player1.sword->swing();
-
-
-
+Sword IronSword;
+Player player1(&IronSword);
+Player player2{player1};
 
 }
