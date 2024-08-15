@@ -2,25 +2,35 @@
 #include <iostream>
 using namespace std;
 
-
 struct Sword{
-  string mName;
+  Sword() = default;
 
-  Sword(string name): mName(name){
-    cout << "Sword " << mName << " created" << endl;
-  }
-  Sword (const Sword& other){
-    mName = other.mName;
-    cout << "Copy constructor called" << endl;
+  Sword(const Sword& other){
+    cout << "Copy constructor" << endl;
   }
 
 };
 
+struct Player{
+  Sword* mWeapon {nullptr};
 
+  Player(Sword* weapon){
+    mWeapon = weapon;
+  }
+
+  Player(const Player& other){
+    mWeapon = other.mWeapon;
+    cout << "Copy constructor for Player" << endl; 
+  }
+
+};
 
 int main(){
-  Sword s1("Excalibur");
-  Sword s2(s1);
-  
-  cout <<s2.mName << endl;
+  Sword s1;
+  Player p1(&s1);
+  Player p2 = p1;
+  if (p1.mWeapon == p2.mWeapon){
+    cout << "Same weapon" << endl;
+  }
+
 }
