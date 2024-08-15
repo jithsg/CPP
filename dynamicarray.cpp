@@ -1,48 +1,32 @@
 #include <iostream>
 using namespace std;
 
-
-class Sword{
-  public:
-  int mDamage {10};
+struct Sword{
+  int damage;
+  Sword(int damage){
+    this->damage = damage;
+  }
   void swing(){
-    cout << "Attacking with sword" << endl;
+    cout << "Swinging sword for " << damage << " damage" << endl;
   }
-
 };
 
+struct player{
+  Sword* sword {nullptr};
 
-class Player{
-
-  public:
-  Sword* mWeapon {nullptr};
-
-
-  Player(Sword* weapon){
-    mWeapon = weapon;
+  player(Sword* sword){
+    this->sword = sword;
   }
 
-  void attack(){
-    mWeapon->swing();
-  }  
-       
 
 };
-
 
 int main(){
 
-  Sword s1;
+  Sword sword1(10);
+  player player1(&sword1);
+  player1.sword->swing();
 
-  Player p1(&s1);
-  p1.attack();
-  p1.mWeapon->mDamage=50;
-  cout << "Damage: " << s1.mDamage << endl;
-
-  Player p2{p1};
-  cout<<p2.mWeapon->mDamage<<endl;
-
-  return 0;
 
 
 
