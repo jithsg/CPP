@@ -1,10 +1,10 @@
 #include <iostream>
-#include "math.cpp"
-using namespace std;
+#include "math_declarations.h"
 
+using namespace std;
 
 
 int main() {
 
-cout << Add(5, 7) << endl;
+cout << math::Add(5, 7) << endl;
 }
