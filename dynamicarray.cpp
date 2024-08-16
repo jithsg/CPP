@@ -2,34 +2,20 @@
 #include <iostream>
 using namespace std;
 
-struct Sword{
-  Sword() = default;
+int Add(int x, int y) {
+  return x + y;
+}
 
-  Sword(const Sword& other){
-    cout << "Copy constructor" << endl;
-  }
+// Float Overload
+float Add(float x, float y) {
+  return x + y;
+}
 
-};
 
-struct Player{
-  Sword* mWeapon {nullptr};
+int main() {
+ cout<<Add(1, 2)<<endl;
+cout<<Add(int(1.0f), int(2.0f))<<endl;
 
-  Player(Sword* weapon){
-    mWeapon = weapon;
-  }
-
-  Player(const Player& other): mWeapon(other.mWeapon){
-    cout << "Copy constructor for Player" << endl; 
-  }
-
-};
-
-int main(){
-  Sword s1;
-  Player p1(&s1);
-  Player p2 = p1;
-  if (p1.mWeapon == p2.mWeapon){
-    cout << "Same weapon" << endl;
-  }
+return 0;
 
 }
