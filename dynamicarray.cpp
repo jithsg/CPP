@@ -24,6 +24,14 @@ vector operator-(const vector &a, const vector &b){
   return result;
 }
 
+vector operator-(const vector &a){
+  vector result;
+  result.x = -a.x;
+  result.y = -a.y;
+  result.z = -a.z;  
+  return result;
+}
+
 vector operator*(const vector &a, const vector &b){
   vector result;
   result.x = a.x * b.x;
@@ -43,6 +51,9 @@ cout << c.x << " " << c.y << " " << c.z << endl;
 cout << d.x << " " << d.y << " " << d.z << endl;
 vector e = a * b;
 cout << e.x << " " << e.y << " " << e.z << endl;
+
+vector f = -a;
+cout << f.x << " " << f.y << " " << f.z << endl;
 return 0;
 
 }
