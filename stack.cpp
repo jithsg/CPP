@@ -20,7 +20,9 @@ public:
 
 int main() { 
     // Uniform (curly brace) initialization
-  unique_ptr <Character> ptr= make_unique <Character> ("John", 100);
-  ptr->display();
-    return 0;
+    unique_ptr<Character> ptr1 {make_unique<Character>("Player1", 100)};
+    auto ptr2 {make_unique<Character>("Player2", 200)};
+    ptr1->display();
+    ptr2->display();
+
 }
