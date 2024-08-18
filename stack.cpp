@@ -20,5 +20,8 @@ int main(){
     cout << *ptr2 << endl;
 
     cout <<new int{6}<<endl;
+
+    int* ptr3 {new int{7+9}};
+    cout << *ptr3 << endl;
     
 }
