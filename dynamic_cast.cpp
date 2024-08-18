@@ -2,9 +2,7 @@
 #include <string>
 
 int main(){
-  std::string UserInput;
+ int x {5};
+ int& y {42};
 
-  std::cout << "Enter some text: ";
-  std::getline(std::cin, UserInput);
-  std::cout << "You entered: " << UserInput;
 }
