@@ -1,5 +1,6 @@
 #include <iostream>
 #include <memory>
+#include <vector>
 
 struct Subresource{
 
@@ -29,11 +30,16 @@ struct Resource{
 
 
 int main(){
-    std::cout<<"Subresource SubA;"<<std::endl;    
-    Subresource SubA;
+    // std::cout<<"Subresource SubA;"<<std::endl;    
+    // Subresource SubA;
 
-    std::cout<<"Subresource SubB"<<std::endl;
+    // std::cout<<"Subresource SubB"<<std::endl;
 
-    Subresource SubB{SubA};
+    // Subresource SubB{SubA};
+    std::cout<<"Resource ResA;"<<std::endl;
+    Resource ResA;
+    std:: vector<Resource> Resources;
+    std::cout<<"Resources.push_back(ResA);"<<std::endl;
+    Resources.push_back(ResA);
 
 }
