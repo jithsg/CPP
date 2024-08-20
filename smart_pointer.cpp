@@ -1,12 +1,24 @@
-#include<iostream>
-#include<memory>
-using namespace std;
+#include <iostream>
+#include <memory>
 
+struct Sword {};
 
-int main(){
-    const unique_ptr<const int>ptr1 {make_unique<int>(10)};
-    cout<<++(*ptr1)<<endl;
-    ptr1.reset();
-    cout<<ptr1.get()<<endl;
-    return 0;
+class Character {
+ public:
+  Character()
+      : Weapon{std::make_unique<Sword>()} {};
+
+  Character(const Character& Source) {
+    std::cout << "I'm being copied!";
+  }
+
+  std::unique_ptr<Sword> Weapon;
+};
+
+int main() {
+  Character A{};
+  Character B{A};
+
+  std::cout << "\nA's Weapon: " << A.Weapon;
+  std::cout << "\nB's Weapon: " << B.Weapon;
 }
