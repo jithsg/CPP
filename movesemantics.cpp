@@ -33,6 +33,13 @@ class Resource{
         cout<<"Resource destructor called"<<endl;
     
     }
+    Resource& operator=(Resource&& Source){
+
+        cout<<"Resource copy assignment operator called"<<endl;
+        sub = move(Source.sub);
+ 
+        return *this;
+    }
 
 };
 
@@ -49,4 +56,5 @@ int main(){
     if (!Original.sub.get()){
         cout<<"Original no longer has its subresource"<<endl;
     }
+    ResB = move(ResA);
 }
