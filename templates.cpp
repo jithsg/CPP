@@ -20,9 +20,5 @@ class Pair{
 
 int main(){
     Pair<int, float> Pair1{5, 3.14f};
-    Pair1.SetFirst(10);
-    Pair1.SetSecond(6.28f);
-    cout<< "First: " << Pair1.GetFirst() << endl;
-    cout<< "Second: " << Pair1.GetSecond() << endl;
 
 }
