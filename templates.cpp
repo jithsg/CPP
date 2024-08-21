@@ -1,18 +1,28 @@
-#include<utility>
 #include<iostream>
 using namespace std;
 
+template<typename T1, typename T2>
 
-struct Player{
-    string Name {"Anna"};
+class Pair{
+    private:
+        T1 mFirst;
+        T2 mSecond;
+    public:
+        Pair(const T1& first, const T2& second): mFirst(first), mSecond(second){}
+
+        T1 GetFirst() const {return mFirst;}
+        void SetFirst(const T1& first){mFirst = first;}
+
+        T2 GetSecond() const {return mSecond;}
+        void SetSecond(const T2& second) {mSecond = second;}
+
 };
 
 int main(){
+    Pair<int, float> Pair1{5, 3.14f};
+    Pair1.SetFirst(10);
+    Pair1.SetSecond(6.28f);
+    cout<< "First: " << Pair1.GetFirst() << endl;
+    cout<< "Second: " << Pair1.GetSecond() << endl;
 
-pair<Player, float> MyPair{Player{"Joe"}, 3.14f};
-
-cout << "First: " << MyPair.first.Name << endl;
-cout << "Second: " << MyPair.second << endl;
 }
-
-
