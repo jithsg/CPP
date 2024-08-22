@@ -1,18 +1,17 @@
 #include<iostream>
 using namespace std;
 
-int GetNumber(){
-    int a;
-    cout << "Enter a number: ";
-    cin >> a;
-    return a;
+struct SomeType{
+    int mValue;
+    constexpr SomeType(int init): mValue(init){}
+    constexpr int getValue() const { return mValue; }
 
-}
-
-constexpr int Add(int a, int b){
-    return a + b;
-}
+};
 
 int main(){
-    cout << "The sum is: " << Add(GetNumber(), GetNumber()) << endl;
-};
+    constexpr SomeType st(10);
+    cout << st.mValue << endl;
+     constexpr int SomeInt { st.getValue()};
+    cout << SomeInt << endl;
+    return 0;
+}
