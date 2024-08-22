@@ -1,19 +1,18 @@
 #include<iostream>
 using namespace std;
 
-template <int SomeInt>
-class Resource{
-    public:
-        int mValue {SomeInt};
+int GetNumber(){
+    int a;
+    cout << "Enter a number: ";
+    cin >> a;
+    return a;
 
-};
+}
+
+constexpr int Add(int a, int b){
+    return a + b;
+}
 
 int main(){
-    Resource<5> five;
-    cout << five.mValue << endl;
-
-    Resource<6> six;
-    cout << six.mValue << endl;
-
-    return 0;
-}
+    cout << "The sum is: " << Add(GetNumber(), GetNumber()) << endl;
+};
