@@ -26,5 +26,6 @@ int main(){
     Monster m1{"Monster1"};
 
     p1.AttackDisplay<Monster>(m1);
+    p1.AttackDisplay(m1);
 
 }
