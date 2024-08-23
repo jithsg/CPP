@@ -13,7 +13,7 @@ class Player{
         string mName;
     template <typename T>
     void AttackDisplay(T other){
-        cout << this->mName << " Attacking " << other.mName << endl;
+        cout << mName << " Attacking " << other.mName << endl;
     }
 
 };
