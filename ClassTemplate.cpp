@@ -19,25 +19,28 @@ struct Monster{
 template <typename T>
 class Renderable{
     public:
-    void Render(T object){
-        cout << object.Description << endl;
-    }
     T object;
-};
-template<>
-class Renderable<Monster>{
-    public:
-    void Render(Monster object){
-        cout << object.Name << endl;
-    }
-    Monster object;
+    void Render();
 };
 
+template <typename T>
+void Renderable<T>::Render(){
+        cout << object.Description << endl;
+    }
+
+template<>
+void Renderable<Monster>::Render(){
+    cout << object.Name << endl;
+
+}
+
+
 int main(){
-    Renderable<Tree> A;
-    A.Render(Tree());
-    Renderable<Rock> B;
-    B.Render(Rock());
-    Renderable<Monster> C;
-    C.Render(Monster());
+    Renderable<Tree> A{Tree()}; 
+    A.Render();
+    Renderable<Rock> B{Rock()};
+    B.Render();
+    Renderable<Monster> C{Monster()};
+    C.Render();
+
 }
