@@ -19,8 +19,8 @@ void Function(T object) {
 }
 
 int main() {
-    Function(Player{});
-    Function(Monster{});
+    // Function(Player{});
+    // Function(Monster{});
     Function(Goblin{});
     // Function(Rock{});  // This will cause a compilation error because Rock is not derived from Monster or Player.
     return 0;
