@@ -27,6 +27,7 @@ class Base<T>{
 int main() {
 
     Base<int> b;
+    
     b.object = 5;
     cout<<b.object<<endl;
 
