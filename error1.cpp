@@ -1,6 +1,7 @@
 #include <iostream>
 #include<type_traits>
 #include <cassert>
+#include<stdexcept>
 using namespace std;
 
 
@@ -113,10 +114,9 @@ using namespace std;
 
 
 int Divide(int x, int y){
-    if (y==0) {
-        throw "cannot divide by zero";
+    if (y==0) throw invalid_argument("Cannot divide by zero");
 
-    }
+    
             return x/y;
 }
 
@@ -124,8 +124,9 @@ int main(){
     try {
         Divide (5, 0);
     } 
-    catch(...){
-        cout << "I caught an error";
+    catch(invalid_argument& e) {
+        cout << "I caught an error"<<endl;
+        cout<< e.what()<<endl;
     }
     cout << "\nThe program can continue as normal";
 
