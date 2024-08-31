@@ -35,7 +35,8 @@ for (character& c: arr1){
     cout<<&c<<endl;
 
 }
-array<array<int, 3>, 3> arr2;
+using Grid = array<array<int, 3>, 3>;
+Grid arr2;
 arr2= {{{1,2,3},
        {4,5,6}, 
        {7,8,9}}};
