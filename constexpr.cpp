@@ -10,6 +10,7 @@ struct SomeType{
 };
 
 int main(){
+    // This section demonstrates the usage of constexpr with a custom type SomeType
     constexpr SomeType st(10);
     cout << st.mValue << endl;
      constexpr int SomeInt { st.getValue()};
