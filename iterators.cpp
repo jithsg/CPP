@@ -58,3 +58,11 @@ using namespace std;
 //         cout<<*iterator<<endl;
 //     }
 // }
+
+// int main(){
+//     vector<int> Nums{1,2,3,4,5};
+
+//     for (auto& num: Nums){
+//         cout<<num<<endl;
+//     }
+// }
