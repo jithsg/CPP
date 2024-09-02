@@ -67,20 +67,41 @@ using namespace std;
 //     }
 // }
 
-class Character{
-    public:
-        string Name {"Anna"};
-        void GetName(){
-            cout<<Name<<endl;
-        }
-};
+// class Character{
+//     public:
+//         string Name {"Anna"};
+//         void GetName(){
+//             cout<<Name<<endl;
+//         }
+// };
+// int main(){
+
+//     array<Character, 5> Characters;
+
+//     for(auto& character: Characters){
+//         character.GetName();
+
+//     }
+//     return 0;
+
+
+// int main() {
+//   std::vector<int>Nums{1, 2, 3, 4, 5};
+//   auto Distance {distance(Nums.begin(), Nums.end())};
+//   std::cout << "Distance: " << Distance;
+// }
+
+#include <algorithm>
+void log(int num){
+    cout<<num<<endl;
+    
+}
+
 int main(){
+    vector<int> Nums{1,2,3,4,5};
 
-    array<Character, 5> Characters;
+    for_each(Nums.begin(), Nums.end(), log);
+    return 0;   
 
-    for(auto& character: Characters){
-        character.GetName();
 
-    }
-    return 0;
 }
