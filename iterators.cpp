@@ -66,3 +66,21 @@ using namespace std;
 //         cout<<num<<endl;
 //     }
 // }
+
+class Character{
+    public:
+        string Name {"Anna"};
+        void GetName(){
+            cout<<Name<<endl;
+        }
+};
+int main(){
+
+    array<Character, 5> Characters;
+
+    for(auto& character: Characters){
+        character.GetName();
+
+    }
+    return 0;
+}
