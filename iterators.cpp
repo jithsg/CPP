@@ -92,16 +92,38 @@ using namespace std;
 // }
 
 #include <algorithm>
-void log(int num){
-    cout<<num<<endl;
+
+// void increment(int& num){
+
+//     num++;
+// }
+// void log(int num){
+//     cout<<num<<endl;
     
-}
+// }
 
-int main(){
-    vector<int> Nums{1,2,3,4,5};
+// int main(){
+//     vector<int> Nums{1,2,3,4,5};
 
-    for_each(Nums.begin(), Nums.end(), log);
-    return 0;   
+//     for_each(Nums.begin(), Nums.end(), increment);
+
+//     for_each(Nums.cbegin(), Nums.cend(), log);
+//     return 0;   
 
 
-}
+// }
+
+// int main(){
+//     forward_list<int> Nums{1,2,3,4,5};
+//     auto Start{Nums.begin()};
+//     auto End{Nums.end()};
+//     auto Distance{distance(Start, End)};
+//     cout<<"Distance: "<<Distance<<endl;
+//     cout<<"First: "<<*Start<<endl;
+//     // cout<<"Last: "<<*(next(End, -2))<<endl;
+//     for (auto iterator{Start}; iterator != End; iterator++){
+//         cout<<*iterator<<endl;
+//     }
+
+//     cout<<"First: "<<*Start<<endl;
+// }
