@@ -139,6 +139,7 @@ int main(){
     // cout<<Characters.front().Name<<endl;
     Characters.emplace_front("Elf");
     cout<<Characters.front().Name<<endl;
+    Characters.pop_front();
 
     Characters.emplace_after(Characters.begin(), "Orc");
     for (auto& character: Characters){
