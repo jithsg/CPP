@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <forward_list>
+#include <list>
 using namespace std;
 // int main() {
 //   std::array Nums{1, 2, 3};
@@ -31,4 +32,13 @@ using namespace std;
 //     cout<<"First: "<<*Start<<endl;
 //     cout<<"Second: "<< *Second<<endl;
 
+// }
+
+// int main(){
+//     list<int> Nums{1,2,3,4,5};
+//     auto iterator {Nums.begin()};
+//     cout<<"start: "<<*iterator<<endl;
+//     cout<<"start + 1: "<<*(++iterator)<<endl;
+//     cout<<"start + 2: "<<*(++iterator)<<endl;
+//     cout<<"start + 2 -1: "<<*(--iterator)<<endl;
 // }
