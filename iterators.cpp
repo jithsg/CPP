@@ -3,6 +3,7 @@
 #include <string>
 #include <forward_list>
 #include <list>
+#include <vector>
 using namespace std;
 // int main() {
 //   std::array Nums{1, 2, 3};
@@ -42,3 +43,13 @@ using namespace std;
 //     cout<<"start + 2: "<<*(++iterator)<<endl;
 //     cout<<"start + 2 -1: "<<*(--iterator)<<endl;
 // }
+
+int main(){
+    vector <int> Nums{1,2,3,4,5};
+    auto begin{Nums.begin()};
+    auto end{Nums.end()};
+
+    cout<<"First: "<<*begin<<endl;
+    cout<<"Last: "<<*(end-1)<<endl;
+    cout<<"Second: "<<*(begin+1)<<endl;
+}
