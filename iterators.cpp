@@ -127,3 +127,22 @@ using namespace std;
 
 //     cout<<"First: "<<*Start<<endl;
 // }
+
+class Character{
+    public:
+        string Name;
+};
+int main(){
+    forward_list<Character> Characters;
+    Character Wizrad{"Gandalf"};
+    Characters.push_front(Wizrad);
+    // cout<<Characters.front().Name<<endl;
+    Characters.emplace_front("Elf");
+    cout<<Characters.front().Name<<endl;
+
+    Characters.emplace_after(Characters.begin(), "Orc");
+    for (auto& character: Characters){
+        cout<<character.Name<<endl;
+    }
+
+}
