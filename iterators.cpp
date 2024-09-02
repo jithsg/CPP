@@ -44,12 +44,17 @@ using namespace std;
 //     cout<<"start + 2 -1: "<<*(--iterator)<<endl;
 // }
 
-int main(){
-    vector <int> Nums{1,2,3,4,5};
-    auto begin{Nums.begin()};
-    auto end{Nums.end()};
+// int main(){
+//     vector <int> Nums{1,2,3,4,5};
+//     auto begin{Nums.begin()};
+//     auto end{Nums.end()};
 
-    cout<<"First: "<<*begin<<endl;
-    cout<<"Last: "<<*(end-1)<<endl;
-    cout<<"Second: "<<*(begin+1)<<endl;
-}
+//     // cout<<"First: "<<*begin<<endl;
+//     // // cout<<"Last: "<<*(end-1)<<endl;
+//     // // cout<<"Second: "<<*(begin+1)<<endl;
+//     // cout<<"First: "<<*(next(begin+1, -1))<<endl;
+
+//     for(auto iterator{begin}; iterator != end; iterator++){
+//         cout<<*iterator<<endl;
+//     }
+// }
