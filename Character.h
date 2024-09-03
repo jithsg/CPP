@@ -9,12 +9,9 @@ class Character {
         }
 };
 
-namespace std{
-    template<>
-    struct hash<Character>{
-        size_t operator()(const Character& character) const{
-            return hash<string>{}(character.mName);
-        }
-    };
 
-}
+struct hasher{
+        size_t operator()(const Character& character) const{
+            return std:: hash<std:: string>{}(character.mName);
+        }
+};
