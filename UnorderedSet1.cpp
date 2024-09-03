@@ -23,4 +23,12 @@ int main(){
     if (myset.contains(5)){
         cout<<"5 is in myset"<<endl;
     }
+    auto A {myset.find(5)};
+    if (A!= myset.end()){
+        cout<<"5 is in myset"<<endl;
+    }
+    else{
+        cout<<"5 is not in myset"<<endl;
+    }
+
 } 
