@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
 
-    unordered_set <Character, hasher> Characters;
+    unordered_set <Character, hasher, comparer> Characters;
     Characters.insert(Character("A"));
     Characters.emplace("B");
 
