@@ -68,8 +68,8 @@ using std::string, std::optional;
 //     return 0;
 // }
 
-#include <iostream>
-#include <optional>
+// #include <iostream>
+// #include <optional>
 
 // struct SomeType {
 //   int Value;
@@ -80,17 +80,50 @@ using std::string, std::optional;
 //   std::cout << "Value: " << Optional->Value;
 // }
 
-struct Player{
-    string Name;
-    int Level;
+// struct Player{
+//     string Name;
+//     int Level;
+// };
+
+// int main(){
+//     using std::cout, std::endl;
+//     optional<Player> Anna;
+//     Anna.emplace("Anna", 1);
+//     cout<<Anna->Name<<endl;
+//     cout<<Anna->Level<<endl;
+
+//     return 0;
+// }
+
+// int main(){
+//     using std::cout, std::endl;
+//     optional<int> Optional{42};
+//     if (Optional==42){
+//         cout<<"its 42"<<endl;
+//     }
+ 
+//     return 0;
+// }
+
+enum class Faction{
+    Human,
+    Elf
 };
+
+class Character{
+    public:
+    optional<Faction> faction;
+};
+
 
 int main(){
     using std::cout, std::endl;
-    optional<Player> Anna;
-    Anna.emplace("Anna", 1);
-    cout<<Anna->Name<<endl;
-    cout<<Anna->Level<<endl;
+    Character Anna;
+    if (Anna.faction!=Faction::Human){
+        cout<<"Not Human"<<endl;
+    }
+    else{
+        cout<<"Human"<<endl;
+    }
 
-    return 0;
 }
