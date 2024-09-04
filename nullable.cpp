@@ -105,25 +105,39 @@ using std::string, std::optional;
 //     return 0;
 // }
 
-enum class Faction{
-    Human,
-    Elf
-};
+// enum class Faction{
+//     Human,
+//     Elf
+// };
 
-class Character{
-    public:
-    optional<Faction> faction;
-};
+// class Character{
+//     public:
+//     optional<Faction> faction;
+// };
 
 
-int main(){
-    using std::cout, std::endl;
-    Character Anna;
-    if (Anna.faction!=Faction::Human){
-        cout<<"Not Human"<<endl;
-    }
-    else{
-        cout<<"Human"<<endl;
-    }
+// int main(){
+//     using std::cout, std::endl;
+//     Character Anna;
+//     if (Anna.faction!=Faction::Human){
+//         cout<<"Not Human"<<endl;
+//     }
+//     else{
+//         cout<<"Human"<<endl;
+//     }
 
-}
+// }
+
+// optional<int> EmptyIntOptional(){
+//     return std::nullopt;
+// }
+
+// int main(){
+//     using std::cout, std::endl;
+//     if (EmptyIntOptional()){
+//         cout<<"Not Empty"<<endl;
+//     }
+//     else{
+//         cout<<"Empty"<<endl;
+//     }
+// }
