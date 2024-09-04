@@ -141,3 +141,24 @@ using std::string, std::optional;
 //         cout<<"Empty"<<endl;
 //     }
 // }
+
+class Character{
+    public:
+    bool hasGuild{false};
+    string GuildName;
+};
+
+optional<string> GetGuildName(const Character& character){
+    if (character.hasGuild){
+        return character.GuildName;
+    }
+    else{
+        return std::nullopt;
+    }
+}
+
+int main(){
+    using std::cout, std::endl;
+    Character player;
+    cout<<GetGuildName(player).value_or("[None]")<<endl;
+}
