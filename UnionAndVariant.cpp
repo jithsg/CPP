@@ -12,33 +12,70 @@
 
 
 
-class Character{
-    public:
-    std::string Name;
-    Character(std::string name):Name(name){}
+// class Character{
+//     public:
+//     std::string Name;
+//     Character(std::string name):Name(name){}
+// };
+
+// void log(Character* character){
+//     if (character){
+//         std::cout<<character->Name<<std::endl;
+//     }
+//     else{
+//         std::cout<<"Character is null"<<std::endl;
+//     }
+// }
+
+
+// struct Visitor{
+//     void operator()(int i){
+//         std::cout<<"int"<<std::endl;
+//     }
+//     void operator()(float f){
+//         std::cout<<"float"<<std::endl;
+//     }
+
+// };
+
+struct T{
+    T()=delete;
 };
 
-void log(Character* character){
-    if (character){
-        std::cout<<character->Name<<std::endl;
-    }
-    else{
-        std::cout<<"Character is null"<<std::endl;
-    }
-}
+// struct T2{
+//     T2()=delete;
+// };
 
+struct  Visitor{
+    void operator()(const T& t){
+        std::cout<<"type T"<<std::endl;
+    }
+    void operator()(const std::monostate&){
+        std::cout<<"monostate"<<std::endl;
+    }
+
+
+};
 
 
 int main(){
 using std::cout, std::endl, std::string;
 
-std::variant<Character, int> num(Character("Anna"));
+std::variant<std::monostate, T> Temp;
 
-num.emplace<0>("Annie");
+std::visit(Visitor{}, Temp);
 
-cout<<std::get<Character>(num).Name<<endl;
+// std::variant<float, int> num;
+// num=3.14f;
 
-log(std::get_if<Character>(&num));
+//  std::visit(Visitor{}, num);
+// cout<<std::get<float>(num)<<endl;
+
+// num.emplace<0>("Annie");
+
+// cout<<std::get<Character>(num).Name<<endl;
+
+// log(std::get_if<Character>(&num));
 // num=3;
 // num=3.3f;
 // num="hello";
