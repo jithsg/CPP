@@ -50,7 +50,7 @@ struct  Visitor{
     void operator()(const T& t){
         std::cout<<"type T"<<std::endl;
     }
-    void operator()(const std::monostate&){
+    void operator()(const std::monostate& mono){
         std::cout<<"monostate"<<std::endl;
     }
 
