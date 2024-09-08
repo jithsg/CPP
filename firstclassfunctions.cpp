@@ -19,5 +19,10 @@ falias addptr2 {add};
 
 std::cout<<addptr(1,2)<<std::endl;
 std::cout<<addptr2(1,2)<<std::endl;
+addptr=nullptr;
+if (addptr){
+std::cout<<(*addptr)(1,2)<<std::endl;
+}
+
 }
 
