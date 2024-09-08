@@ -31,6 +31,9 @@ class Player{
     bool isAlive ()const{
         return true;
     }
+    bool isOnline ()const{
+        return true;
+    }
 };
 
 class Party{
@@ -39,20 +42,34 @@ class Party{
     Player PlayerTwo;
     Player PlayerThree;
 
-    bool isEveryoneAlive()const{
-        return PlayerOne.isAlive() && PlayerTwo.isAlive() && PlayerThree.isAlive();
-    }   
+   bool all_of(auto Predicate){
+    return Predicate(PlayerOne) && Predicate(PlayerTwo) && Predicate(PlayerThree);
+   }
     
 };
 
+
+bool PlayerisAlive(const Player& player){
+    return player.isAlive();
+}
+
+
+bool PlayerisOnline(const Player& player){
+    return player.isOnline();
+}
+
+
 int main(){
     Party MyParty;
-   
-    if (MyParty.isEveryoneAlive()){
-        std::cout<<"Everyone is alive"<<std::endl;
+
+    if (MyParty.all_of(PlayerisOnline)){
+        std::cout<<"All players are online"<<std::endl;
     }
     else{
-        std::cout<<"Someone is dead"<<std::endl;
+        std::cout<<"Not all players are online"<<std::endl;
     }
    
+
 }
+
+
