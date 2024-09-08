@@ -38,21 +38,21 @@ class Party{
     Player PlayerOne;
     Player PlayerTwo;
     Player PlayerThree;
+
+    bool isEveryoneAlive()const{
+        return PlayerOne.isAlive() && PlayerTwo.isAlive() && PlayerThree.isAlive();
+    }   
     
 };
 
 int main(){
     Party MyParty;
-    bool isEveryoneAlive{
-        MyParty.PlayerOne.isAlive() &&
-        MyParty.PlayerTwo.isAlive() &&
-        MyParty.PlayerThree.isAlive()
-    };
-
-    if (isEveryoneAlive){
+   
+    if (MyParty.isEveryoneAlive()){
         std::cout<<"Everyone is alive"<<std::endl;
     }
     else{
         std::cout<<"Someone is dead"<<std::endl;
     }
+   
 }
