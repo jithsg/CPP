@@ -19,9 +19,10 @@ class Func{
 
 };
 
-void isEven(int num, Func func){
+void isEven(int num, Func& func){
     if (num % 2 == 0){
         std::cout<<"Even"<<std::endl;
+        func();
     }
     else{
         std::cout<<"Odd"<<std::endl;
@@ -32,7 +33,6 @@ void isEven(int num, Func func){
 int main(){
 Func func2;
 func2();
-func2();
-func2();
- 
+isEven(2, func2);
+isEven(4, func2);
 }

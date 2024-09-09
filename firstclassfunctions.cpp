@@ -45,8 +45,8 @@ class Party{
     Player PlayerTwo;
     Player PlayerThree;
     
-
-   bool all_of(auto Predicate){
+    using Handler = bool (*)(const Player&);
+   bool all_of(Handler Predicate){
     return Predicate(PlayerOne) && Predicate(PlayerTwo) && Predicate(PlayerThree);
    }
    bool any_of(auto Predicate){
