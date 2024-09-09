@@ -19,10 +19,16 @@ int main(){
 
 //     return 0;
 
-auto sum {[](int x, int y)->void{
-    std::cout<<"Hello from Lambda, the sum is "<< x +y << std::endl;
+// auto sum {[](int x, int y)->void{
+//     std::cout<<"Hello from Lambda, the sum is "<< x +y << std::endl;
 
-}};
-sum(1,2);
+// }};
+// sum(1,2);
+int Num {10};
+
+[Num](){
+    std::cout<<"Hello from Lambda"<<std::endl;
+    std::cout<<"Num: "<<Num<<std::endl;
+}();
 }
 
