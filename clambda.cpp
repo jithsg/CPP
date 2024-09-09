@@ -13,10 +13,16 @@ int main(){
 //     }};
 
 //     myLambda();
-isEven(4, []{
-    std::cout<<"Even Number"<<std::endl;
-});
+// isEven(4, []{
+//     std::cout<<"Even Number"<<std::endl;
+// });
 
-    return 0;
+//     return 0;
 
+auto sum {[](int x, int y){
+    std::cout<<"Hello from Lambda, the sum is "<< x +y << std::endl;
+
+}};
+sum(1,2);
 }
+
