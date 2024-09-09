@@ -13,4 +13,5 @@ int main(){
 Func func1;
 func1();
 Func()();
+Func{}();   
 }
