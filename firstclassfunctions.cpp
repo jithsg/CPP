@@ -34,6 +34,9 @@ class Player{
     bool isOnline ()const{
         return true;
     }
+    int getLevel()const{
+        return 45;
+    }
 };
 
 class Party{
@@ -62,6 +65,10 @@ bool PlayerisOnline(const Player& player){
     return player.isOnline();
 }
 
+template<int Level>
+bool PlayerIsAtLeastLevel(const Player& player){
+    return player.getLevel()>=Level;
+}
 
 int main(){
     Party MyParty;
@@ -78,6 +85,13 @@ int main(){
     }
     else{
         std::cout<<"No players are online"<<std::endl;
+    }
+
+    if (MyParty.all_of(PlayerIsAtLeastLevel<40>)){
+        std::cout<<"All players are at least level 40"<<std::endl;
+    }
+    else{
+        std::cout<<"Not all players are at least level 40"<<std::endl;
     }
 
 }
