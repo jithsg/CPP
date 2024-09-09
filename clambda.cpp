@@ -30,7 +30,7 @@ int x {10};
 int y {20};
 int z {30};
 
-[&]()mutable{
+[=, &x]()mutable{
     std::cout<<"Hello from Lambda"<<std::endl;
     std::cout<<"x: "<<x<<std::endl;
     std::cout<<"y: "<<y<<std::endl;
