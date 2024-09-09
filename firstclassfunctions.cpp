@@ -41,11 +41,13 @@ class Party{
     Player PlayerOne;
     Player PlayerTwo;
     Player PlayerThree;
+    
 
-    using Handler = bool (*)(const Player&);
-
-   bool all_of(Handler Predicate){
+   bool all_of(auto Predicate){
     return Predicate(PlayerOne) && Predicate(PlayerTwo) && Predicate(PlayerThree);
+   }
+   bool any_of(auto Predicate){
+    return Predicate(PlayerOne) || Predicate(PlayerTwo) || Predicate(PlayerThree);
    }
     
 };
@@ -71,6 +73,12 @@ int main(){
         std::cout<<"Not all players are online"<<std::endl;
     }
    
+   if (MyParty.any_of(PlayerisOnline)){
+        std::cout<<"At least one player is online"<<std::endl;
+    }
+    else{
+        std::cout<<"No players are online"<<std::endl;
+    }
 
 }
 
