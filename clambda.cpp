@@ -26,9 +26,15 @@ int main(){
 // sum(1,2);
 int Num {10};
 
-[Num](){
+int x {10};
+int y {20};
+int z {30};
+
+[x, y, z](){
     std::cout<<"Hello from Lambda"<<std::endl;
-    std::cout<<"Num: "<<Num<<std::endl;
+    std::cout<<"x: "<<x<<std::endl;
+    std::cout<<"y: "<<y<<std::endl;
+    std::cout<<"z: "<<z<<std::endl;
 }();
 }
 
