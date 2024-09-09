@@ -30,11 +30,12 @@ int x {10};
 int y {20};
 int z {30};
 
-[x, y, z](){
+[x, y, z, Casted= static_cast<bool>(x)](){
     std::cout<<"Hello from Lambda"<<std::endl;
     std::cout<<"x: "<<x<<std::endl;
     std::cout<<"y: "<<y<<std::endl;
     std::cout<<"z: "<<z<<std::endl;
+    std::cout<<"Casted: "<<typeid(Casted).name()<<std::endl;
 }();
 }
 
