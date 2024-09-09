@@ -19,7 +19,7 @@ int main(){
 
 //     return 0;
 
-auto sum {[](int x, int y){
+auto sum {[](int x, int y)->void{
     std::cout<<"Hello from Lambda, the sum is "<< x +y << std::endl;
 
 }};
