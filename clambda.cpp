@@ -30,12 +30,11 @@ int x {10};
 int y {20};
 int z {30};
 
-[x, y, z, Casted= static_cast<bool>(x)]()mutable{
+[&]()mutable{
     std::cout<<"Hello from Lambda"<<std::endl;
     std::cout<<"x: "<<x<<std::endl;
     std::cout<<"y: "<<y<<std::endl;
     std::cout<<"z: "<<z<<std::endl;
-    std::cout<<"Casted: "<<typeid(Casted).name()<<std::endl;
     std::cout<< "x+1: "<<++x<<std::endl;
     std::cout<<"y+1: "<<y+1<<std::endl;
     std::cout<<"z+1: "<<z+1<<std::endl;
