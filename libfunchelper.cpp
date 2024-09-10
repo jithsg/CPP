@@ -44,34 +44,67 @@
 // }
 
 
-void Call(std::function<void(int, int)>func){
-    func(1,2);
+// void Call(std::function<void(int, int)>func){
+//     func(1,2);
 
-}
-
-
-void func(int x, int y){
-    std::cout<<"x: "<<x<<std::endl;
-    std::cout<<"y: "<<y<<std::endl;
-}
-
-struct Functor{
-    public:
-    void operator()(int x, int y){
-        std::cout<<"x: "<<x<<std::endl;
-        std::cout<<"y: "<<y<<std::endl;
-    }
-};
-
-int main(){
-    Call(func);
-    Call(Functor());
-    Call([](int x, int y){
-        std::cout<<"x: "<<x<<std::endl;
-        std::cout<<"y: "<<y<<std::endl;
-    });
+// }
 
 
-    return 0;
+// void func(int x, int y){
+//     std::cout<<"x: "<<x<<std::endl;
+//     std::cout<<"y: "<<y<<std::endl;
+// }
 
-}
+// struct Functor{
+//     public:
+//     void operator()(int x, int y){
+//         std::cout<<"x: "<<x<<std::endl;
+//         std::cout<<"y: "<<y<<std::endl;
+//     }
+// };
+
+// int main(){
+//     Call(func);
+//     Call(Functor());
+//     Call([](int x, int y){
+//         std::cout<<"x: "<<x<<std::endl;
+//         std::cout<<"y: "<<y<<std::endl;
+//     });
+
+
+//     return 0;
+
+// }
+
+// void Call(std::invocable<int, int>auto func){
+//     func(1,2);
+
+// }
+
+
+// void func(int x, int y){
+//     std::cout<<"x: "<<x<<std::endl;
+
+//     std::cout<<"y: "<<y<<std::endl;
+// }
+
+// struct Functor{
+//     public:
+//     void operator()(int x, int y){
+//         std::cout<<"x: "<<x<<std::endl;
+//         std::cout<<"y: "<<y<<std::endl;
+//     }
+// };
+
+// int main(){
+//     Call(func);
+//     Call(Functor());
+//     Call([](int x, int y){
+//         std::cout<<"x: "<<x<<std::endl;
+//         std::cout<<"y: "<<y<<std::endl;
+//     });
+
+
+//     return 0;
+
+// }
