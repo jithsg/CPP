@@ -145,22 +145,23 @@
 //         std::cout<<"Not all players are online"<<std::endl;
 //     };
 // }
+
+// struct SomeType{
+// };
+// void Call(std::predicate auto Func){
+//     std::cout<<"That was a predicate"<<std::endl;
+// }
+
+// void Call(auto Func){
+//     std::cout<<"That was not a predicate"<<std::endl;
+// }
+
+// int main(){
+//     Call([](){return SomeType();});
+//     Call([](){return true;});
+//     return 0;
+// }
 #include<iostream>
 #include<functional>
 #include<concepts>
 
-struct SomeType{
-};
-void Call(std::predicate auto Func){
-    std::cout<<"That was a predicate"<<std::endl;
-}
-
-void Call(auto Func){
-    std::cout<<"That was not a predicate"<<std::endl;
-}
-
-int main(){
-    Call([](){return SomeType();});
-    Call([](){return true;});
-    return 0;
-}
