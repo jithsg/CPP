@@ -44,8 +44,8 @@
 // }
 
 
-void Call(std::function<void(int, int)>func, int x, int y){
-    func(x, y);
+void Call(std::function<void(int, int)>func){
+    func(1,2);
 
 }
 
@@ -55,8 +55,23 @@ void func(int x, int y){
     std::cout<<"y: "<<y<<std::endl;
 }
 
+struct Functor{
+    public:
+    void operator()(int x, int y){
+        std::cout<<"x: "<<x<<std::endl;
+        std::cout<<"y: "<<y<<std::endl;
+    }
+};
+
 int main(){
-    Call(func, 10, 20);
+    Call(func);
+    Call(Functor());
+    Call([](int x, int y){
+        std::cout<<"x: "<<x<<std::endl;
+        std::cout<<"y: "<<y<<std::endl;
+    });
+
+
     return 0;
 
 }
