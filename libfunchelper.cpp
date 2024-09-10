@@ -1,5 +1,6 @@
 #include<iostream>
 #include<functional>
+#include<concepts>
 // using Type = void (*)();
 // void Call(std::invocable auto Greet){
 //     Greet();
@@ -24,8 +25,26 @@
 //     Call([]{std::cout<<"Hello!"<<std::endl;});
 //     return 0;
 // }
+// using Func = void(*)(int, int);
+// void Call(Func func, int x, int y){
+//     func(x, y);
 
-void Call(std::function<void(int, int)> func, int x, int y){
+// }
+
+
+// void func(int x, int y){
+//     std::cout<<"x: "<<x<<std::endl;
+//     std::cout<<"y: "<<y<<std::endl;
+// }
+
+// int main(){
+//     Call(func, 10, 20);
+//     return 0;
+
+// }
+
+
+void Call(std::function<void(int, int)>func, int x, int y){
     func(x, y);
 
 }
