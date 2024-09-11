@@ -41,35 +41,58 @@
 //     return 0;
 // }
 
-template<int R, int C>
-class Matrix{
-    public:
-    static const int Rows {R};
-    static const int Cols {C};
+// template<int R, int C>
+// class Matrix{
+//     public:
+//     static const int Rows {R};
+//     static const int Cols {C};
 
-    Matrix(){};
-    Matrix(int){};
+//     Matrix(){};
+//     Matrix(int){};
 
 
-    bool operator==(int){return true;}
+//     bool operator==(int){return true;}
 
-    auto operator*(auto Other){
-        return Matrix<Rows, Other.Cols>{};
+//     auto operator*(auto Other){
+//         return Matrix<Rows, Other.Cols>{};
+//     }
+// };
+
+// template <typename T1, typename T2>
+// auto Multiply(T1 x, T2 y)->decltype(x*y){
+//     if (x==0 || y==0) return 0;
+//     return x*y;
+// }
+
+// int main(){
+//   Matrix<3, 1> A;
+//   Matrix<1, 3> B;
+//   auto Result{Multiply(A, B)};
+
+//   std::cout
+//     << "Rows: " << Result.Rows
+//     << "\nColumns: " << Result.Cols;
+// }
+
+class Character{
+    private:
+    std::string Name;
+
+    virtual auto getName()const ->std::string {
+        return Name;
     }
+
 };
 
-template <typename T1, typename T2>
-auto Multiply(T1 x, T2 y)->decltype(x*y){
-    if (x==0 || y==0) return 0;
-    return x*y;
+class Player: public Character{
+    public:
+    auto getName()const ->std::string override{
+        return "Player";
+    
 }
-
+};
 int main(){
-  Matrix<3, 1> A;
-  Matrix<1, 3> B;
-  auto Result{Multiply(A, B)};
-
-  std::cout
-    << "Rows: " << Result.Rows
-    << "\nColumns: " << Result.Cols;
+    Player p;
+    std::cout<<p.getName()<<std::endl;
+    return 0;
 }
