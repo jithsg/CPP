@@ -63,10 +63,15 @@ class Player{
 
 int main(){
     Player player{"Anna"};
+    Player player2;
     auto Func {std::bind(&Player::GetName, &player)};
     Func();
     auto Func2{std::bind(&Player::GetName, std::placeholders::_1)};
    
    Func2(player);
-   
+   auto Func3{std::bind_front(&Player::GetName)};
+   Func3(player);
+   auto Func4{std::bind_front(&Player::SetName, &player2)};
+   Func4("Anna");
+
     }
