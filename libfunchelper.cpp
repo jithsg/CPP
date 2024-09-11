@@ -165,3 +165,57 @@
 #include<functional>
 #include<concepts>
 
+
+// template<std::predicate<int, float> T>
+// void logifTrue(T Predicate, int x, float y){
+//     if(Predicate(x, y)){
+//         std::cout<<"The predicate was true"<<std::endl;
+//     }
+//     else{
+//         std::cout<<"The predicate was false"<<std::endl;
+//     }
+// }
+
+// int main(){
+//     logifTrue([](int x, float y){return x > y;}, 10, 5.5f);
+//     return 0;
+// }
+
+// template<typename T>
+// concept Addable = requires(T a, T b){
+//     {a+b}->std::same_as<int>;
+// };
+
+// template<Addable T>
+// T Add(T a, T b){
+//     return a+b;
+// }
+
+// int main(){
+//     std::cout<<Add(1,2)<<std::endl;
+//     std::cout<<Add(1.5f, 2.5f)<<std::endl;
+//     return 0;
+// }
+
+// template<typename ...Args>
+// void print(Args...args){
+//     (std::cout<<...<<args)<<std::endl;
+// }
+
+// int main(){
+//     print<int, int, float>(1, 2, 3.0f);
+//     return 0;
+// }
+
+// void func(int x, int y){
+//     std::cout<<"x: "<<x<<std::endl;
+//     std::cout<<"y: "<<y<<std::endl;
+// }
+
+// int main(){
+//     std::function<void(int, int)> Callable{func};
+//     Callable(1,2);
+//     return 0;
+
+// }
+
