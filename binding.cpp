@@ -45,3 +45,28 @@
 
 
 // }
+
+
+
+class Player{
+    public:
+    std::string Name;
+    void GetName(){
+        std::cout<<"Name: "<<Name<<std::endl;
+    }
+    void SetName(std::string name){
+        Name = name;
+    }
+
+};
+
+
+int main(){
+    Player player{"Anna"};
+    auto Func {std::bind(&Player::GetName, &player)};
+    Func();
+    auto Func2{std::bind(&Player::GetName, std::placeholders::_1)};
+   
+   Func2(player);
+   
+    }
