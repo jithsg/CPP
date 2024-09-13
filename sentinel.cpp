@@ -37,5 +37,4 @@ int main(){
     for (auto it {R.begin()}; it != s; ++it){
         std::cout<<*it<<std::endl;
     }
-
     };
