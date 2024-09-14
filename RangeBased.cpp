@@ -49,7 +49,9 @@ int main(){
 
     std::vector<SomeType> number{0, 2, 1, 3};
 
-    std::ranges::sort(number);
+    std::ranges::sort(number, [](const SomeType& a, const SomeType& b){
+        return a.mX >b.mX;
+    });
     for (auto& number:number){
         std::cout<<number.mX<<" ";
     }
