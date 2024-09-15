@@ -16,9 +16,14 @@ int main(){
     //     std::cout<<number<<std::endl;
     // }
 
-    std::ranges::sort(std::views::take(numbers,3));
+    // std::ranges::sort(std::views::take(numbers,3));
 
-    for (const auto& number:numbers){
+    // for (const auto& number:numbers){
+    //     std::cout<<number<<std::endl;
+    // }
+    auto filtered = std::views::filter(numbers, [](int x){return x%2==0;});
+
+    for (const auto& number:filtered){
         std::cout<<number<<std::endl;
     }
 
