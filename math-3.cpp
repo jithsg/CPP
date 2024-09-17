@@ -1,1 +1,1 @@
-float Pi{3.14f};
+const float Pi{3.14f};
