@@ -1,1 +1,2 @@
-const float Pi{3.14f};
+// Define and initialize Pi
+float Pi = 3.14f;

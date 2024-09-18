@@ -1,6 +1,9 @@
-//main.cpp
 #include <iostream>
-// extern float Pi;
 
-extern const float Pi;
-int main(){ std::cout << "Pi: " << Pi; }
+// Declare Pi as extern since it's defined in another file
+extern float Pi;
+
+int main() {
+    std::cout << "The value of Pi is: " << Pi << std::endl;
+    return 0;
+}
