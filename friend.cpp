@@ -30,7 +30,9 @@
 
 class MyClass{
 
-    friend void showPrivateData(MyClass&);
+    friend void showPrivateData(MyClass& obj){
+        std::cout<<"Private data: "<<obj.mVal<<std::endl;
+    }
     public:
     MyClass(int val):mVal(val){}
 
@@ -38,9 +40,9 @@ class MyClass{
     int mVal;
 };
 
-void showPrivateData(MyClass& obj){
-    std::cout<<"Private data: "<<obj.mVal<<std::endl;
-}
+// void showPrivateData(MyClass& obj){
+//     std::cout<<"Private data: "<<obj.mVal<<std::endl;
+// }
 
 int main(){
     MyClass obj(10);
