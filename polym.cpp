@@ -1,39 +1,67 @@
 #include<iostream>
 
-class shape{
+// class shape{
+//     public:
+//     virtual void draw() =0;
+
+
+// };
+
+// class circle: public shape{
+//     public:
+//     void draw() override{
+//         std::cout<<"Drawing a circle"<<std::endl;
+//     }
+// };
+
+// class square: public shape{
+//     public:
+//     void draw() override{
+//         std::cout<<"Drawing a square"<<std::endl;
+//     }
+// };
+// void displayshape(shape& s){
+//     s.draw();
+// }
+
+// int main(){
+//    circle c;
+//     square s;
+//     shape sp;
+//     // c.draw();
+//     // s.draw();
+//     displayshape(c);
+//     displayshape(s);
+//     return 0;
+
+// }
+
+class Character{};
+
+class Fish: public Character{};
+
+class ITaunter{
     public:
-    virtual void draw() =0;
-
-
+    virtual std::string getTaunt() =0;
 };
 
 
-class circle: public shape{
+class Orc: public Character, public ITaunter{
     public:
-    void draw() override{
-        std::cout<<"Drawing a circle"<<std::endl;
+    std::string getTaunt() override{
+        return "Orc says: 'Me kill you!'";
     }
+
 };
 
-class square: public shape{
-    public:
-    void draw() override{
-        std::cout<<"Drawing a square"<<std::endl;
-    }
-};
-
-void displayshape(shape& s){
-    s.draw();
+void Taunt(ITaunter& taunter){
+    std::cout<<taunter.getTaunt()<<std::endl;
 }
 
 int main(){
-   circle c;
-    square s;
-    shape sp;
-    // c.draw();
-    // s.draw();
-    displayshape(c);
-    displayshape(s);
-    return 0;
 
+Orc orc;
+Taunt(orc);
+// Fish fish;
+// Taunt(fish);
 }
