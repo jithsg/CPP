@@ -2,34 +2,34 @@
 
 class shape{
     public:
-    virtual void draw() const{
-        std::cout<<"Drawing a shape"<<std::endl;
-    }
+    virtual void draw() =0;
+
 
 };
 
 
 class circle: public shape{
     public:
-    void draw() const override{
+    void draw() override{
         std::cout<<"Drawing a circle"<<std::endl;
     }
 };
 
-class sqaure: public shape{
+class square: public shape{
     public:
-    void draw() const override{
+    void draw() override{
         std::cout<<"Drawing a square"<<std::endl;
     }
 };
 
-void displayshape(const shape& s){
+void displayshape(shape& s){
     s.draw();
 }
 
 int main(){
    circle c;
-    sqaure s;
+    square s;
+    shape sp;
     // c.draw();
     // s.draw();
     displayshape(c);
