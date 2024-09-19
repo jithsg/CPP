@@ -50,26 +50,59 @@
 //     return 0;
 // }
 
+// class B;
+
+
+// class A{
+
+//     friend void B::showPrivateData(A);
+
+//     private:
+//     int mVal;
+
+//     public:
+//     A(int val):mVal(val){}
+
+// };
+
+
+// class B{
+//     public:
+//     static void showPrivateData(A obj){
+//         std::cout<<"Private data of A: "<<obj.mVal<<std::endl;
+//     }
+
+// };
+
+// int main(){
+//     A obj(10);
+//     B b;
+
+//     A.showPrivateData(obj);
+
+
+// }
+
 class B;
 
 
 class A{
+    public:
+    
+    
+    A(int val):mVal(val){};
 
-    friend class B; 
+    friend void B::showPrivateData(A& obj);
 
     private:
     int mVal;
 
-    public:
-    A(int val):mVal(val){}
-
 };
 
-
 class B{
-    public:
+public:
     void showPrivateData(A& obj){
-        std::cout<<"Private data of A: "<<obj.mVal<<std::endl;
+        std::cout<<"Private Data: "<<obj.mVal<<std::endl;
     }
 
 };
@@ -77,8 +110,6 @@ class B{
 int main(){
     A obj(10);
     B b;
-
     b.showPrivateData(obj);
-
-
+    return 0;
 }
