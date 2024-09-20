@@ -4,6 +4,10 @@ class MyClass{
     public:
     int mValue;
     explicit MyClass(int value):mValue(value){}
+
+    explicit operator int() const{
+        return mValue;
+    }
 };
 
 void disp(const MyClass& mc){
@@ -12,6 +16,9 @@ void disp(const MyClass& mc){
 
 int main(){
    
-   disp(MyClass(42));
+   MyClass obj(10);
+
+   int num = static_cast<int>(obj);
+   std::cout<<num<<std::endl;
    return 0;
 }
