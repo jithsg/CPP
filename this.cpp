@@ -24,9 +24,9 @@ struct Player{
         std::cout<<(*this).score<<std::endl;
     }
 
-    Player* increaseScore(int value){
+    Player increaseScore(int value){
         this->score+=value;
-        return this;
+        return *this;
     }
 
 };
@@ -39,7 +39,7 @@ int main(){
     p1.disp();
     // p1.display();
     // p1.displayed();
-    p1.increaseScore(5)->increaseScore(10);
+    p1.increaseScore(5);
     p1.disp();
 
 }
