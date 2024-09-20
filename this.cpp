@@ -26,7 +26,7 @@ struct Player{
 
     Player increaseScore(int value){
         this->score+=value;
-        return *this;
+        return *this; //Returns the current object by value
     }
 
 };
