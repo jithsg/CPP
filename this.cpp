@@ -29,6 +29,11 @@ struct Player{
         return *this; //Returns the current object by value
     }
 
+    Player& incrementScore(int value){
+        this->score+=value;
+        return *this;
+        }
+
 };
 
 int main(){ 
@@ -41,5 +46,6 @@ int main(){
     // p1.displayed();
     p1.increaseScore(5);
     p1.disp();
+    p1.incrementScore(5).incrementScore(5).disp();
 
 }
