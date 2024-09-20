@@ -2,24 +2,33 @@
 
 struct Player{
     public:
-    std::string mName;
-    int mScore;
+    std::string name;
+    int score;
 
-    Player(std::string name, int score):mName(name), mScore(score){}
+    Player(std::string name, int score){
+        this->name = name;
+        this->score = score;
+    }
 
     void disp(){
-        std::cout<<mName<<std::endl;
-        std::cout<<mScore<<std::endl;
+        std::cout<<name<<std::endl;
+        std::cout<<score<<std::endl;
     }
     void display(){
-        std::cout<<this->mName<<std::endl;
-        std::cout<<this->mScore<<std::endl;
+        std::cout<<this->name<<std::endl;
+        std::cout<<this->score<<std::endl;
     }
 
     void displayed(){
-        std::cout<<(*this).mName<<std::endl;
-        std::cout<<(*this).mScore<<std::endl;
+        std::cout<<(*this).name<<std::endl;
+        std::cout<<(*this).score<<std::endl;
     }
+
+    Player* increaseScore(int value){
+        this->score+=value;
+        return this;
+    }
+
 };
 
 int main(){ 
@@ -28,6 +37,9 @@ int main(){
     // std::cout<<p1.mName<<std::endl;
     // std::cout<<p1.mScore<<std::endl;
     p1.disp();
-    p1.display();
-    p1.displayed();
+    // p1.display();
+    // p1.displayed();
+    p1.increaseScore(5)->increaseScore(10);
+    p1.disp();
+
 }
