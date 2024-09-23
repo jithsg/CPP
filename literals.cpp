@@ -8,7 +8,8 @@ int main(){
     10_meters;
     20_meters;
     30_meters;
-    40_meters;y
+    40_meters;
+    50_meters;
     
     return 0;
 }
