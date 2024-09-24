@@ -10,6 +10,7 @@ int main(){
     30_meters;
     40_meters;
     50_meters;
+    60_meters;
     
     return 0;
 }
